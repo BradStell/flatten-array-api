@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./app.css">
+        <title>API - Instructions</title>
+    </head>
+
+    <body>
+        <h1>API Instructions</h1>
+        <h3>Endpoints</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Endpoint</th>
+                    <th>Method Type</th>
+                    <th>Payload Expected</th>
+                    <th>Response</th>
+                    <th>Expected Response Codes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/</td>
+                    <td>GET</td>
+                    <td>n/a</td>
+                    <td>This page</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>/api/array/flatten-array</td>
+                    <td>POST</td>
+                    <td>
+                        JSON object with properties:
+                        <div>
+                            <b>data:</b> array to flatten
+                        </div>
+                    </td>
+                    <td>
+                        JSON object with 2 properties
+                        <div>
+                            <b>data:</b> flattened array
+                        </div>
+                        <div>
+                            <b>error:</b> error if any
+                        </div>
+                    </td>
+                    <td>
+                        <div><b>200</b> - success</div>
+                        <div><b>400</b> - malformed data</div>
+                        <div><b>500</b> - internal server error</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
