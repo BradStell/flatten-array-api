@@ -52,7 +52,6 @@ describe('array service', () => {
     // should report data error - test 1
     it ('flatten-array: should report data error - 1', (done) => {
         const inArray = [1, 2, [3, '4']];
-        const outArray = [];
 
         arrayService.flattenArray(inArray).catch((err) => {
             err.should.be.a('object');
@@ -65,7 +64,6 @@ describe('array service', () => {
     // should report data error - test 2
     it ('flatten-array: should report data error - 2', (done) => {
         const inArray = [1, 2, [3, 4.234]];
-        const outArray = [];
 
         arrayService.flattenArray(inArray).catch((err) => {
             err.should.be.a('object');
@@ -78,7 +76,6 @@ describe('array service', () => {
     // should report data error - test 3
     it ('flatten-array: should report data error - 3', (done) => {
         const inArray = [1, 2, [3, {}]];
-        const outArray = [];
 
         arrayService.flattenArray(inArray).catch((err) => {
             err.should.be.a('object');

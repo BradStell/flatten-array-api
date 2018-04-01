@@ -12,8 +12,7 @@ const flattenArray = (inputArray) => {
         }
 
         try {
-            const flattenedArray = _flattenArray(inputArray);
-            resolve(flattenedArray);
+            resolve(_flattenArray(inputArray));
         } catch (err) {
             reject({ statusCode: 400, message: err.message });
         }
@@ -21,7 +20,7 @@ const flattenArray = (inputArray) => {
 };
 
 const _flattenArray = (array, flatArray = []) => {
-    array.forEach(element => {
+    array.forEach((element) => {
         if (element instanceof Array) _flattenArray(element, flatArray);                                // item is an array
         else if (_isInteger(element)) flatArray.push(element);                                          // item is an integer
         else throw Error(`Item ${element} is of type ${typeof element} and needs to be an integer`);    // item is not an array or an integer: throw error
