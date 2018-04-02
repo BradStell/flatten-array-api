@@ -3,14 +3,6 @@
 // returns: flattened array or error if array was not in correct format
 const flattenArray = (inputArray) => {
     return new Promise((resolve, reject) => {
-        if (!inputArray) {
-            reject({ statusCode: 400, message: `No 'data' property found on request body` });
-        }
-
-        if (!(inputArray instanceof Array)) {
-            reject({ statusCode: 400, message: `data ${inputArray} is not an array`});
-        }
-
         try {
             resolve(_flattenArray(inputArray));
         } catch (err) {
