@@ -45,12 +45,20 @@ If running in a cloud environment, visit:
 ```
 
 # Example data for flatten array api endpoint
-As disclosed on the api documentation page (`http://localhost:7777/`), the api endpoint for flattening the array is located at the path `/api/array/flatten-array`. This endpoint expects the array to come in the body of a POST method as a JSON object in a data property. The JSON object containing the array should be raw JSON, not form encoded. 
-### Example: POST data:
+As disclosed on the api documentation page (`http://localhost:7777/`), the api endpoint for flattening the array is located at the path `/api/array/flatten-array`. 
+
+This endpoint can accept the incomming array only as raw JSON, which can be delivered two different ways:  
+  1. Inside of JSON object, in "data" property
+### Example POST data in JSON object:
 ```
 {
     "data": [1, 2, [3, 4, [5]]]         // array to flatten
 }
+```
+  2. Or as the POST body itself
+### Example POST data as array
+```
+[1, 2, [3, 4, [5]]]
 ```
 
 The endpoint will return an object with two properties  
@@ -65,7 +73,6 @@ The endpoint will return an object with two properties
 ```
 
 # Future work
-  * Have endpoint also accept array as the only body (not forced to be inside of `data` property in JSON object)
   * Have endpoint optionally accept data encoded as form data, for multiple ways to hit endpoint
   * Make error handling more robust
   * Have endpoints that will flatten arrays with compound data structures (not limited to just integers)
