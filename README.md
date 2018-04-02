@@ -49,14 +49,14 @@ As disclosed on the api documentation page (`http://localhost:7777/`), the api e
 
 This endpoint can accept the incomming array only as raw JSON, which can be delivered two different ways:  
   1. Inside of JSON object, in "data" property
-### Example POST data in JSON object:
+##### Example POST data as sent in JSON object
 ```
 {
     "data": [1, 2, [3, 4, [5]]]
 }
 ```
   2. Or as the POST body itself
-### Example POST data as array
+##### Example POST data as sent only as array
 ```
 [1, 2, [3, 4, [5]]]
 ```
