@@ -52,7 +52,7 @@ This endpoint can accept the incomming array only as raw JSON, which can be deli
 ### Example POST data in JSON object:
 ```
 {
-    "data": [1, 2, [3, 4, [5]]]         // array to flatten
+    "data": [1, 2, [3, 4, [5]]]
 }
 ```
   2. Or as the POST body itself
